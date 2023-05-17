@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br"><!--define a linguagem da pagina para o navegador entender-->
+
+<head>
+    <meta charset="UTF-8"><!--define a região para o navegador entender os acentos-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--definições de compatibilidade de navegador-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartório da EBAC</title><!--titulo da pagina-->
+    
+    <!--Início dos estilos responsáveis por dar as cores e efeitos na página-->
+    <style> 
+        * { /*Reseta as configurações padrões por precaução de erros de compatibilidade de navegadores */
+            padding:0;
+            margin:0;
+            vertical-align:baseline;
+            list-style:none;
+            border:0
+        }
+
+        body /*estilos da tag body do html aqui só coloquei a cor de fundo e cores das letras*/
+        {           
+            background-color: #3F8CFF;/*altera a cor do fundo da tag body inteira */
+            color: white; /*define tudo que estiver escrito na tag body na cor branca*/
+        }
+        #divGeral/*div geral  que criei como "pai" para conseguir alinhar mais duas divs lado a lado no layout e fazer a pagina responsiva futuramente*/
+        {
+            display: flex;/*organiza os elementos filhos em uma linha ou coluna.*/
+        }
+        #divLogin /*div do lado esquerdo da pagina onde fica o form de login*/
+        {
+                       
+            text-align: center;/*alinha tudo ao centro da div*/
+            width: 500px;/*define a largura da div*/
+            height: 680px;/*define a altura da div*/  
+            position: fixed;/*fixa os elementos da div para que não saiam do lugar*/                       
+        }
+        #divCadastro/*div do lado direito da pagina onde fica o form de cadastro*/ 
+        {
+            
+            text-align: center;/*alinha tudo ao centro da div*/
+            width: 1100px;/*define a largura da div*/
+            height: 705px;/*define a altura da div*/ 
+            margin-left: 505px; /*a margem da esquerda para alinhar ao lado da outra*/ 
+            background: linear-gradient(90deg, #3877d7 12%, transparent 25%, transparent 12%, #3877d7 25%);/*define o fundo listrado da div do lado direito*/ 
+            background-size: 30px 30px; /*define o tamanho do fundo, no caso os gradientes*/
+                                 
+        }
+        #logoEmpresa /*estilo do local onde vai ser colocado a logo da empresa*/
+        {
+            border: 2px solid white;/*faz uma borda branca em volta*/
+            border-radius: 50px;/*arredonda a borda tornando redonda*/
+            width: 100px;/*define a largura*/
+            height: auto;/*define a altura*/
+            margin-top: 80px;/*da um espaça de margem de cima para baixo*/
+        }
+        #divFormLogin /*defino os estilos da div do form de login*/
+        {
+            width: 300px;/*largura*/
+            text-align: center;/*alinha tudo no centro*/
+            position: absolute;/*fixa a posição do form pra nao sair do lugar*/
+            left: 100px;/*da uma margem na esquerda pra alinha a div no centro*/
+            background-color: rgb(255, 255, 255, 0.2);/*define a cor de fundo do form e deixa 20% de transparencia*/
+            border: 2px solid rgb(255, 255, 255);/*faz a borda branca com 2px de expessura em volta da div*/
+            padding: 0 0 20px 0;/*aumenta a margem de baixo da div login*/
+            margin-top: 50px;/*da uma margem superioi da div login*/
+        }
+        #divFormCadastro/*estilo da div do form de cadastro*/
+        {
+            width: 500px;/*largura*/
+            text-align: center;/*alinha tudo no centro*/
+            left: 100px;/*da uma margem na esquerda pra alinha a div no centro*/
+            background-color: rgb(255, 255, 255, 0.2);/*define a cor de fundo do form e deixa 20% de transparencia*/
+            border: 2px solid rgb(255, 255, 255);/*faz a borda branca com 2px de expessura em volta da div*/
+            padding: 0 0 20px 0;/*aumenta a margem de baixo da div login*/
+            margin: 30px 250px;/*da a margem de fima e da direita*/           
+            
+        }
+        #h2FormLogin /*titulo do form de login*/
+        {
+            margin-top: 20px;/*define uma margem superior para linhamento*/
+        }
+        #h1Cadastro/*estilo da h1 em cima do form de cadastro*/
+        {
+            margin-top: 150px;/*define marem superior*/
+        }
+        #inputUsuarioLogin /*estilo do input de usuario*/
+        {
+            padding: 8px 20px;/*aumenta o tamanho do input*/
+            background-color: rgba(255, 255, 255, 0.2);/*define um fundo branco e 20% de transparencia*/
+            border: 2px solid white;/*define uma borda branca de 2px em volta do input*/
+            outline: none;/*remove a moldura padrao do input html*/
+            margin-top: 20px;/*define uma margem superior*/
+            color: white;
+        }
+        #inputUsuarioLogin::placeholder /*define a cor e opacidade do placeholder*/
+        {
+            color: white;
+            opacity: 0.5;
+        }
+        #inputCadastroNome, #inputCadastroEmail, #inputCadastroSenha/*define os estilos dos inputs de cadastro*/
+        {
+            padding: 8px 100px;/*aumenta o tamanho do input*/
+            background-color: rgba(255, 255, 255, 0.2);/*define um fundo branco e 20% de transparencia*/
+            border: 2px solid white;/*define uma borda branca de 2px em volta do input*/
+            outline: none;/*remove a moldura padrao do input html*/
+            margin-top: 10px;/*define uma margem superiorem relação ao input superior*/
+            color: white;
+            
+        }
+        #inputCadastroNome, #inputCadastroEmail, #inputCadastroSenha::placeholder /*define a cor e opacidade do placeholder*/
+        {
+            color: white;
+            opacity: 0.5;
+            
+        }
+        #inputSenhaLogin/*estilo do input de senha*/
+        {
+            padding: 8px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            margin-top: 30px;
+            outline: none;
+            color: white;
+            
+        }
+        #inputSenhaLogin::placeholder /*define a cor e opacidade do placeholder*/
+        {
+            color: white;
+            opacity: 0.5;
+        }
+        #botaoLogin /*define os estilos do botao de login*/
+        {
+            border-radius: 10px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            margin-top: 30px;
+            cursor: pointer;/*altera o ponteiro do mouse para maozinha ao passar por cima do botao*/
+            color: white;
+            
+        }
+        #botaoLogin:hover /*efeito ao passar o mouse em cima do botao mudando a opacidade*/
+        {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        #botaoCadastrar /*estilos do botao cadastrar o mesmo do botao login*/
+        {
+            border-radius: 10px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            margin-top: 30px;
+            cursor: pointer;
+            color: white;
+            
+        }
+        #botaoCadastrar:hover /*efeito ao passar o mouse em cima do botao mudando a opacidade*/
+        {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        #esqueceuSenha /*estilo do h4 de recuperação de senha definindo a posição*/
+        {
+            margin-top: 315px;
+            margin-right: 155px;
+        }
+        #linkRecuperacao/*estilo do link de recuperação de senha*/ 
+        {            
+            text-decoration: none;/*remove o sublinhado padrão nos links html*/
+            color: white;
+        }
+        #linkRecuperacao:hover /*efeito ao passar o mouse em cima do botao mudando a opacidade*/
+        {
+            color: rgba(255, 255, 255, 0.8);
+            
+        }
+    </style>
+    <!--fim dos estilos css - decidi colocar os estilos junto do html ao inves de separar os arquivos para ficar melhor de enviar para avaliação-->
+
+</head><!--fim do cabeçalho-->
+
+<body><!--inicio do corpo da pagina-->
+    
+    <div id="divGeral"><!--div geral usada como pai para alinhar as outras divs dentro dela-->
+    
+        <div id="divLogin"><!--div do lado esquerdo da pagina onde fica a parte de login-->
+            <div id="divLogoEmpresa"><!--div feita para colocar a moldura da logo da empresa-->
+                <img id="logoEmpresa" src="https://seeklogo.com/images/E/ebac-logo-CC73A39D07-seeklogo.com.png" alt="Logo da empresa"><!--link da imagem da logo da empresa-->
+            </div><!--fecha a div da logo-->
+
+            <div id="divH1"><!--div do titulo do sistema abaixo da logo-->
+                <h1 id="h2Titulo">Sistema de registro de<br>alunos e funcionários</h1>
+            </div>
+
+            <div id="divFormLogin"><!--div do form de login-->
+                <form><!--abertura do form para colocar as açoes-->
+                    <h2 id="h2FormLogin">LOGIN</h2><!--titulo no form de login-->
+                    <input type="text" id="inputUsuarioLogin" placeholder="Usuário:"><!--input onde o usuario entrara com o login-->
+                    <br><!--quebra de linha-->
+                    <input type="password" id="inputSenhaLogin" placeholder="Digite sua senha:"><!--input onde o usuario entrara com a senha-->
+                    <br><!--quebra de linha-->
+                    <button id="botaoLogin">Entrar no Sistema</button><!--botao de login-->
+                </form><!--fecha o form de login-->
+
+            </div>
+
+            <h4 id="esqueceuSenha"><a id="linkRecuperacao" href="pagina de recuperacao a ser feita">Esqueceu a senha?</a></h4><!--link de recuperação de senha-->
+        </div>
+
+        <div id="divCadastro"><!--abertura da div cadastro que fia do lado direito da pagina com as listras-->
+            <h1 id="h1Cadastro" >Ainda não tem cadastro?</h1><!--cabeçalho acima do form de cadastro-->
+            
+            <div id="divFormCadastro"><!--div do form de cadastro-->
+                <form>
+                    <h2 id="h2FormCadastro">CADASTRE-SE</h2><!--titulo dentro do form de cadastro-->
+                    <br><!--quebra de linha-->
+                    <input type="text" id="inputCadastroNome" placeholder="Digite seu nome completo:"><!--input onde o usuario entrara com o nome-->
+                    <br><!--quebra de linha-->
+                    <input type="email" id="inputCadastroEmail" placeholder="Digite seu Email:"><!--input onde o usuario entrara com email-->
+                    <br><!--quebra de linha-->
+                    <input type="email" id="inputCadastroEmail" placeholder="Confirme seu Email:"><!--input onde o usuario entrara com a confirmaçao do email-->
+                    <br><!--quebra de linha-->
+                    <input type="password" id="inputCadastroSenha" placeholder="Cadastre sua senha:"><!--input onde o usuario entrara com a senha-->
+                    <br><!--quebra de linha-->
+                    <input type="password" id="inputCadastroSenha" placeholder="Confirme sua senha:"><!--input onde o usuario entrara com a confirmação da senha-->
+                    <br><!--quebra de linha-->
+                    <button id="botaoCadastrar">Cadastrar</button><!--botao de cadastrar-->
+                </form><!--fecha o form de cadastro-->
+            </div><!--fecha a div do form de cadastro-->
+        </div><!--fecha a div do lado direito com as listras-->
+    </div><!--fecha a div geral "pai"-->
+
+
+</body><!--fecha o corpo da pagina-->
+
+</html><!--fecha o documento html-->
