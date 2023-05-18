@@ -1,0 +1,282 @@
+* {
+    /*Reseta as configurações padrões por precaução de erros de compatibilidade de navegadores */
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0
+}
+
+body
+
+/*estilos da tag body do html aqui só coloquei a cor de fundo e cores das letras*/
+    {
+    background-color: #3F8CFF;
+    /*altera a cor do fundo da tag body inteira */
+    color: white;
+    /*define tudo que estiver escrito na tag body na cor branca*/
+}
+
+#divGeral
+
+/*div geral  que criei como "pai" para conseguir alinhar mais duas divs lado a lado no layout e fazer a pagina responsiva futuramente*/
+    {
+    display: flex;
+    /*organiza os elementos filhos em uma linha ou coluna.*/
+}
+
+#divLogin
+
+/*div do lado esquerdo da pagina onde fica o form de login*/
+    {
+
+    text-align: center;
+    /*alinha tudo ao centro da div*/
+    width: 500px;
+    /*define a largura da div*/
+    height: 680px;
+    /*define a altura da div*/
+    position: fixed;
+    /*fixa os elementos da div para que não saiam do lugar*/
+}
+
+#divCadastro
+
+/*div do lado direito da pagina onde fica o form de cadastro*/
+    {
+
+    text-align: center;
+    /*alinha tudo ao centro da div*/
+    width: 1100px;
+    /*define a largura da div*/
+    height: 705px;
+    /*define a altura da div*/
+    margin-left: 505px;
+    /*a margem da esquerda para alinhar ao lado da outra*/
+    background: linear-gradient(90deg, #3877d7 12%, transparent 25%, transparent 12%, #3877d7 25%);
+    /*define o fundo listrado da div do lado direito*/
+    background-size: 30px 30px;
+    /*define o tamanho do fundo, no caso os gradientes*/
+
+}
+
+#logoEmpresa
+
+/*estilo do local onde vai ser colocado a logo da empresa*/
+    {
+    border: 2px solid white;
+    /*faz uma borda branca em volta*/
+    border-radius: 50px;
+    /*arredonda a borda tornando redonda*/
+    width: 100px;
+    /*define a largura*/
+    height: auto;
+    /*define a altura*/
+    margin-top: 80px;
+    /*da um espaça de margem de cima para baixo*/
+    
+}
+
+#divFormLogin
+
+/*defino os estilos da div do form de login*/
+    {
+    width: 300px;
+    /*largura*/
+    text-align: center;
+    /*alinha tudo no centro*/
+    position: absolute;
+    /*fixa a posição do form pra nao sair do lugar*/
+    left: 100px;
+    /*da uma margem na esquerda pra alinha a div no centro*/
+    background-color: rgb(255, 255, 255, 0.2);
+    /*define a cor de fundo do form e deixa 20% de transparencia*/
+    border: 2px solid rgb(255, 255, 255);
+    /*faz a borda branca com 2px de expessura em volta da div*/
+    padding: 0 0 20px 0;
+    /*aumenta a margem de baixo da div login*/
+    margin-top: 50px;
+    /*da uma margem superioi da div login*/
+}
+
+#divFormCadastro
+
+/*estilo da div do form de cadastro*/
+    {
+    width: 500px;
+    /*largura*/
+    text-align: center;
+    /*alinha tudo no centro*/
+    left: 100px;
+    /*da uma margem na esquerda pra alinha a div no centro*/
+    background-color: rgb(255, 255, 255, 0.2);
+    /*define a cor de fundo do form e deixa 20% de transparencia*/
+    border: 2px solid rgb(255, 255, 255);
+    /*faz a borda branca com 2px de expessura em volta da div*/
+    padding: 0 0 20px 0;
+    /*aumenta a margem de baixo da div login*/
+    margin: 30px 250px;
+    /*da a margem de fima e da direita*/
+
+}
+
+#h2FormLogin
+
+/*titulo do form de login*/
+    {
+    margin-top: 20px;
+    /*define uma margem superior para linhamento*/
+}
+
+#h1Cadastro
+
+/*estilo da h1 em cima do form de cadastro*/
+    {
+    margin-top: 150px;
+    /*define marem superior*/
+}
+
+#inputUsuarioLogin
+
+/*estilo do input de usuario*/
+    {
+    padding: 8px 20px;
+    /*aumenta o tamanho do input*/
+    background-color: rgba(255, 255, 255, 0.2);
+    /*define um fundo branco e 20% de transparencia*/
+    border: 2px solid white;
+    /*define uma borda branca de 2px em volta do input*/
+    outline: none;
+    /*remove a moldura padrao do input html*/
+    margin-top: 20px;
+    /*define uma margem superior*/
+    color: white;
+}
+
+#inputUsuarioLogin::placeholder
+
+/*define a cor e opacidade do placeholder*/
+    {
+    color: white;
+    opacity: 0.5;
+}
+
+#inputCadastroNome,
+#inputCadastroEmail,
+#inputCadastroSenha
+
+/*define os estilos dos inputs de cadastro*/
+    {
+    padding: 8px 100px;
+    /*aumenta o tamanho do input*/
+    background-color: rgba(255, 255, 255, 0.2);
+    /*define um fundo branco e 20% de transparencia*/
+    border: 2px solid white;
+    /*define uma borda branca de 2px em volta do input*/
+    outline: none;
+    /*remove a moldura padrao do input html*/
+    margin-top: 10px;
+    /*define uma margem superiorem relação ao input superior*/
+    color: white;
+
+}
+
+#inputCadastroNome,
+#inputCadastroEmail,
+#inputCadastroSenha::placeholder
+
+/*define a cor e opacidade do placeholder*/
+    {
+    color: white;
+    opacity: 0.5;
+
+}
+
+#inputSenhaLogin
+
+/*estilo do input de senha*/
+    {
+    padding: 8px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    margin-top: 30px;
+    outline: none;
+    color: white;
+
+}
+
+#inputSenhaLogin::placeholder
+
+/*define a cor e opacidade do placeholder*/
+    {
+    color: white;
+    opacity: 0.5;
+}
+
+#botaoLogin
+
+/*define os estilos do botao de login*/
+    {
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    margin-top: 30px;
+    cursor: pointer;
+    /*altera o ponteiro do mouse para maozinha ao passar por cima do botao*/
+    color: white;
+
+}
+
+#botaoLogin:hover
+
+/*efeito ao passar o mouse em cima do botao mudando a opacidade*/
+    {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#botaoCadastrar
+
+/*estilos do botao cadastrar o mesmo do botao login*/
+    {
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    margin-top: 30px;
+    cursor: pointer;
+    color: white;
+
+}
+
+#botaoCadastrar:hover
+
+/*efeito ao passar o mouse em cima do botao mudando a opacidade*/
+    {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#esqueceuSenha
+
+/*estilo do h4 de recuperação de senha definindo a posição*/
+    {
+    margin-top: 315px;
+    margin-right: 155px;
+}
+
+#linkRecuperacao
+
+/*estilo do link de recuperação de senha*/
+    {
+    text-decoration: none;
+    /*remove o sublinhado padrão nos links html*/
+    color: white;
+}
+
+#linkRecuperacao:hover
+
+/*efeito ao passar o mouse em cima do botao mudando a opacidade*/
+    {
+    color: rgba(255, 255, 255, 0.8);
+
+}
